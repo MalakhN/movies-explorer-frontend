@@ -1,0 +1,38 @@
+.sign-message {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 16px 0 30px;
+}
+
+.sign-message__title {
+    color: #A0A0A0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.sign-message__link {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+@media (max-width: 640px) {
+    .sign-message {
+        gap: 7px;
+        padding: 14px 0 30px;
+    }
+
+    .sign-message__title {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .sign-message__link {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

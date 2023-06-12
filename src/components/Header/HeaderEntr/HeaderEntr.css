@@ -1,0 +1,25 @@
+.header__entrance-button {
+    height: 32px;
+    border-radius: 3px;
+    padding: 0 20px;
+    margin: 0;
+    border: none;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  .header__entrance-button:hover {
+    cursor: pointer;
+  }
+
+  .header__entrance-button:last-child {
+    margin: 0 0 0 10px;
+  }
+
+  .header__entrance-button_reverse {
+    background-color: #ffffff;
+    color: #000000;
+  }

@@ -1,0 +1,34 @@
+.sign__fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sign__input-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 10px;
+    border: none;
+    border-bottom: 1px solid #E8E8E8;
+    margin: 0 0 24px;
+}
+
+.sign__input-label {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #A0A0A0;
+}
+
+.sign__input {
+    border: none;
+    background-color: #FFFFFF;
+    margin: 5px 0 0;
+}
+
+.sign__input-error-message {
+    color: #FF4062;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+}

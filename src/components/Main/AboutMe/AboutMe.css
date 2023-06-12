@@ -1,0 +1,157 @@
+.student {
+    max-width: 1190px;
+    margin: 0 auto 0;
+    padding: 0 50px 0;
+}
+
+.student__title {
+    margin: 110px 0 66px;
+}
+
+.student__info {
+    max-width: 1140px;
+    display: grid;
+    grid-template-areas:
+        "text-info photo"
+        "links photo";
+    grid-template-columns: 600px auto;
+    justify-content: space-between;
+    margin: 0 auto 100px;
+}
+
+.student__name {
+    text-align: left;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+    margin: 0 0 18px;
+}
+
+.student__status {
+    text-align: left;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0 0 26px;
+}
+
+.student__description {
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.student__info-text {
+    grid-area: text-info;
+}
+
+.student__info-links {
+    align-self: end;
+    display: flex;
+    grid-area: links;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.student__info-item {
+    margin: 0;
+}
+
+.student__info-link {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.student__photo {
+    border-radius: 10px;
+    grid-area: photo;
+    max-width: 270px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+@media (max-width: 1000px) {
+    .student__title {
+        margin: 90px 0 66px;
+    }
+
+    .student__info {
+        grid-template-columns: 368px auto;
+        margin: 0 auto 91px;
+    }
+
+    .student__photo {
+        max-width: 255px;
+    }
+
+    .student__name {
+        font-size: 40px;
+        line-height: 40px;
+        margin: 0 0 16px;
+    }
+
+    .student__status {
+        font-size: 12px;
+        line-height: 18px;
+        margin: 0 0 20px;
+    }
+
+    .student__description {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 740px) {
+    .student {
+        padding: 0 14px 0;
+    }
+
+    .student__title {
+        margin: 70px 0 66px;
+    }
+
+    .student__info {
+        grid-template-areas:
+        "photo"
+        "text-info"
+        "links";
+        justify-content: center;
+        margin: 0 auto 70px;
+        grid-template-columns: 1fr;
+    }
+
+    .student__photo {
+        max-width: 292px;
+        margin: 0 auto 0;
+    }
+
+    .student__name {
+        font-size: 30px;
+        line-height: 36px;
+        margin: 40px 0 20px;
+    }
+
+    .student__status {
+        font-size: 11px;
+        line-height: 16px;
+        margin: 0 0 20px;
+    }
+
+    .student__description {
+        font-size: 11px;
+        line-height: 16px;
+        margin-bottom: 0;
+    }
+
+    .student__info-item {
+        margin: 40px 0 0;
+    }
+}

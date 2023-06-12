@@ -1,0 +1,12 @@
+.sign__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 380px;
+}
+
+@media (max-width: 640px) {
+    .sign__form {
+        height: 468px;
+    }
+}
