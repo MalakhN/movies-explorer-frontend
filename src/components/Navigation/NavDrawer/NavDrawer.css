@@ -28,8 +28,8 @@
 .nav-drawer__close-button-container {
   display: flex;
   width: 100%;
-  justify-content: end;
-  align-items: end;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .nav-drawer__close-button {

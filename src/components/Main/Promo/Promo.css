@@ -1,15 +1,20 @@
 .promo {
+    max-width: 1200px;
+    max-height: 493px;
+    margin: 0 auto 0;
+    padding: 0;
+    border: 20px solid;
+    border-color: transparent;
+}
+
+.promo__cover {
     display: flex;
     flex-direction:column;
     align-items: center;
     max-width: 1200px;
     max-height: 493px;
-    margin: 0 auto 0;
     background-color: #F5F5F5;
-    padding: 0;
-    border: 20px solid;
     border-radius: 10px;
-    border-color: #FFFFFF;
 }
 
 .promo__title {

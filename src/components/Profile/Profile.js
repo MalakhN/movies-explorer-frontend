@@ -6,16 +6,18 @@ import ProfileForm from "../Profile/ProfileForm/ProfileForm";
 function Profile() {
   return (
     <>
-      <Header containerClassName="header__container-movies">
+      <Header>
         <Navigation/>
       </Header>
-      <section className="profile">
-        <div className="profile__container">
-          <h1 className="profile__title">Привет, Виталий!</h1>
-          <ProfileForm/>
-          <button className="profile__exit-button" type="button">Выйти из аккаута</button>
-        </div>
-      </section>
+      <main className="main-content">
+        <section className="profile">
+          <div className="profile__container">
+            <h1 className="profile__title">Привет, Виталий!</h1>
+            <ProfileForm/>
+            <button className="profile__exit-button" type="button">Выйти из аккаута</button>
+          </div>
+        </section>
+      </main>
     </>
   );
 }

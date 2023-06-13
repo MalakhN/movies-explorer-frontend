@@ -9,14 +9,16 @@ import Footer from "../Footer/Footer";
 function Movies() {
   return (
     <>
-      <Header containerClassName="header__container-movies">
+      <Header>
         <Navigation/>
       </Header>
-      <SearchForm />
-      <MoviesCardList />
-      <div className="movies__more-button-container">
-          <button className="movies__more-button" type="button">Ещё</button>
-      </div>
+      <main className="main-content">
+        <SearchForm />
+        <MoviesCardList />
+        <div className="more-movies">
+            <button className="more-movies__button" type="button">Ещё</button>
+        </div>
+      </main>
       <Footer/>
     </>
   );

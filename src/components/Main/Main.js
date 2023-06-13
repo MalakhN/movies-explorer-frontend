@@ -11,14 +11,16 @@ import Footer from "../Footer/Footer";
 function Main() {
   return (
     <>
-      <Header containerClassName="header__container-main">
+      <Header>
         <HeaderEntr/>
       </Header>
-      <Promo/>
-      <AboutProject/>
-      <Techs/>
-      <AboutMe/>
-      <Portfolio/>
+      <main className="main-content">
+        <Promo/>
+        <AboutProject/>
+        <Techs/>
+        <AboutMe/>
+        <Portfolio/>
+      </main>
       <Footer/>
     </>
   );

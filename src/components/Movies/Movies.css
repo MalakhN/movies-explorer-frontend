@@ -1,4 +1,4 @@
-.movies__more-button-container {
+.more-movies {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,7 +6,7 @@
     margin: 50px auto 80px;
 }
 
-.movies__more-button {
+.more-movies__button {
     width: 320px;
     height: 36px;
     margin: 0 auto 0;
