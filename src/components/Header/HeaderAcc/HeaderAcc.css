@@ -1,0 +1,30 @@
+.header__account {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+  }
+
+  .header__account-link {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+  }
+
+  .header__account-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    border: none;
+    background-color: #F9F9F9;
+    background-image: url(../../../images/account-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .header__account-button:hover {
+    cursor: pointer;
+  }

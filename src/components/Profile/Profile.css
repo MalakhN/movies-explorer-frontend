@@ -1,0 +1,42 @@
+.profile__container {
+    max-width: 410px;
+    margin: 74px auto 0;
+    padding: 0 30px 40px;
+}
+
+.profile__title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.profile__exit-button {
+    width: 410px;
+    border: none;
+    background-color: transparent;
+    color: #FF4062;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .profile__container {
+        margin: 236px auto 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .profile__container {
+        max-width: 300px;
+        margin: 70px auto 0;
+    }
+
+    .profile__exit-button {
+        width: 300px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

@@ -1,0 +1,46 @@
+.promo-navigation__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 308px;
+    margin: 0 0 30px;
+    padding: 0;
+}
+
+.promo-navigation__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 36px;
+    background-color: #E8E8E8;
+    border: none;
+    border-radius: 10px;
+}
+
+.promo-navigation__link {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+@media (max-width: 680px) {
+    .promo-navigation__list {
+        width: 258px;
+    }
+
+    .promo-navigation__item {
+        margin: 0 0 17px;
+        width: 82px;
+        height: 26px;
+    }
+
+    .promo-navigation__link {
+        font-size: 10px;
+        line-height: 16px;
+    }
+}
