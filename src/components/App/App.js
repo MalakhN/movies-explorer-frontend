@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import MainApi from "../../utils/MainApi";
-import MoviesApi from "../../utils/api/MoviesApi";
+import MoviesApi from "../../utils/MoviesApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Main from "../Main/Main";
 import Movies from "../Movies/Movies";
@@ -229,7 +229,7 @@ function App() {
                   />
                 }
               />
-            <Route path="*" element={<PageNotFound loggedIn={loggedIn} />} />
+            <Route path="*" element={<NotFound loggedIn={loggedIn} />} />
           </Routes>
         </div>
       </div>
