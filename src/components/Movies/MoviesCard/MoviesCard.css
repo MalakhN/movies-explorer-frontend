@@ -35,7 +35,7 @@
 
 .movies-card__save-button {
     margin: 18px auto;
-    background: url(../../../../images/save-button-text.svg) center / 70px 11px no-repeat #F9F9F9;
+    background: url(../../../images/save-button-text.svg) center / 70px 11px no-repeat #F9F9F9;
     border: none;
     border-radius: 30px;
     width: 100px;
@@ -48,14 +48,14 @@
 }
 
 .movies-card__save-button_active {
-    background: url(../../../../images/tick.svg) center / 8px 5px no-repeat #FF4062;
+    background: url(../../../images/tick.svg) center / 8px 5px no-repeat #FF4062;
 }
 
 .movies-card__delete-button {
     margin: 18px auto;
     width: 100px;
     height: 29px;
-    background: url(../../../../images/cross.svg) center / 4px 4px no-repeat #F9F9F9;
+    background: url(../../../images/cross.svg) center / 4px 4px no-repeat #F9F9F9;
     border: none;
     border-radius: 30px;
     cursor: pointer;
