@@ -27,10 +27,3 @@
     outline-color: #A0A0A0;
     outline-offset: 2px;
 }
-
-.sign__input-error-message {
-    color: #FF4062;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 12px;
-}

@@ -3,14 +3,14 @@ import SignHeader from "../SignHeader/SignHeader";
 import RegisterForm from "../Register/RegisterForm/RegisterForm";
 import SignMessage from "../SignMessage/SignMessage";
 
-function Register() {
+function Register(props) {
   return (
     <>
       <main className="main-content">
         <section className="register">
           <div className="register__container">
             <SignHeader text="Добро пожаловать!" />
-            <RegisterForm/>
+            <RegisterForm onRegister={props.onRegister} loggedIn={loggedIn}/>
             <SignMessage questionText="Уже зарегистрированы?" linkPath="/sign-in" linkText="Войти"  />
           </div>
         </section>

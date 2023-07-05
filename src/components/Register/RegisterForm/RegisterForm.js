@@ -1,27 +1,23 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
+import { useFormAndValidation } from '../../../hooks/useFormAndValidation';
+import { validateEmail, validateName } from '../../../utils/validators';
 import Form from "../../Form/Form";
 import Input from "../../Form/Input/Input";
 
-function LoginForm(props) {
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+function RegisterForm(props) {
+  const { values, handleChange, errors, isValid } = useFormAndValidation();
+  const navigate = useNavigate();
 
-  function handleChangeName(e) {
-    setName(e.target.value);
-  }
-
-  const handleSetEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSetPassword = (e) => {
-    setPassword(e.target.value);
-  };
+  React.useEffect(() => {
+    if (props.loggedIn) {
+      navigate('/movies');
+    }
+  }, [props.loggedIn, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.onRegister(email, password);
+    props.onRegister(values);
   };
 
   return (
@@ -30,43 +26,52 @@ function LoginForm(props) {
       onSubmit={handleSubmit}
     >
       <Input
-        value={name}
-        onChange={handleChangeName}
+        value={values.name || ''}
+        onChange={handleChange}
         id="name"
-        type="text"
-        name="email"
+        type="name"
+        name="name"
         label="Имя"
-        required={true}
+        required
         minLength="2"
-        maxLength="40"
+        maxLength="70"
         autoComplete="off"
       />
+      <span className={`sign__input-error-message ${isValid ? '' : 'sign__input-error-message_active'}`}>
+        {validateName(values.name).error}
+      </span>
       <Input
         value={email}
-        onChange={handleSetEmail}
+        onChange={handleChange}
         id="email"
         type="email"
         name="email"
         label="E-mail"
-        required={true}
+        required
         minLength="2"
         maxLength="40"
         autoComplete="off"
       />
+      <span className={`sign__input-error-message ${isValid ? '' : 'sign__input-error-message_active'}`}>
+        {validateEmail(values.email).error}
+      </span>
       <Input
         value={password}
-        onChange={handleSetPassword}
+        onChange={handleChange}
         id="password"
         type="password"
         name="password"
         label="Пароль"
-        required={true}
+        required
         minLength="2"
         maxLength="40"
         autoComplete="off"
       />
+      <span className={`sign__input-error ${isValid ? '' : 'sign__input-error_active'}`}>
+        {errors.password}
+      </span>
     </Form>
   )
 }
 
-export default LoginForm;
+export default RegisterForm;

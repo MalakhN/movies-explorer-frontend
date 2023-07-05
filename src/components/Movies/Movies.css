@@ -20,6 +20,18 @@
     line-height: 15px;
 }
 
+.movies__error {
+    margin: 60px 0 60px 0;
+    padding: 0 70px 0 70px;
+    text-align: center;
+}
+
+.movies__not-found {
+    margin: 60px 0 60px 0;
+    padding: 0 70px 0 70px;
+    text-align: center;
+}
+
 @media (max-width: 640px) {
     .movies__more-button {
         width: 240px;

@@ -11,11 +11,12 @@ function Input(props) {
           onChange={props.onChange}
           id={props.id}
           type={props.type}
+          minLength={props.minLength}
+          maxLength={props.maxLength}
           name={props.name}
           required={props.required}
           autoComplete={props.autoComplete}
         />
-        <span className="sign__input-error-message"></span>
       </div>
     </fieldset>
   )
