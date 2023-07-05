@@ -13,7 +13,8 @@
 
 .profile__exit-button {
     width: 410px;
-    border: none;
+    text-align: center;
+    text-decoration: none;
     background-color: transparent;
     color: #FF4062;
     font-weight: 500;

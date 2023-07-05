@@ -1,18 +1,21 @@
 import React from "react";
-import { moviesArray } from "../../../utils/moviesArray";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import "./MoviesCardList.css";
 
-import MovieSaveButton from "../MoviesCard/MovieSaveButton/MovieSaveButton"
-
-function MoviesCardList() {
+function MoviesCardList({ movies, onToggleLike, favoriteMovies, onRemoveMovie }) {
   return (
     <section className="movies-card-list">
       <ul className="movies-card-list__elements">
-        {moviesArray.map((element) => {
-          return <MoviesCard movie={element} key={element.movieId}>
-            <MovieSaveButton movie={element}/>
-          </MoviesCard>;
+        {movies.map((item) => {
+          return (
+            <MoviesCard
+              onToggleLike={onToggleLike}
+              favoriteMovies={favoriteMovies}
+              onRemoveMovie={onRemoveMovie}
+              movie={item}
+              key={item.id || item.movieId}
+            />
+          );
         })}
       </ul>
     </section>

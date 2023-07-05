@@ -51,6 +51,23 @@
     cursor: pointer;
 }
 
+.profile-form__submit-button_disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+.profile__input-error-message {
+    color: #FF4062;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    opacity: 0;
+}
+
+.profile__input-error-message_active {
+    opacity: 1;
+  }
+
 @media (max-width: 768px) {
     .profile-form__form {
         margin: 96px 0 16px;

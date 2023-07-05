@@ -10,6 +10,12 @@
     cursor: pointer;
 }
 
+.sign__submit-button_disabled {
+    background-color: #A0A0A0;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 @media (max-width: 640px) {
     .sign__submit-button {
         font-size: 12px;

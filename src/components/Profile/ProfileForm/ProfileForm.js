@@ -1,62 +1,68 @@
 import "./ProfileForm.css";
 import React from "react";
+import { CurrentUserContext } from "../../../contexts/CurrentUserContext";
+import { useFormAndValidation } from "../../../hooks/useFormAndValidation";
+import { validateEmail, validateName } from "../../../utils/validators";
 
 function ProfileForm(props) {
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
+  const { values, handleChange, setValues } = useFormAndValidation();
+  const currentUser = React.useContext(CurrentUserContext);
 
-  function handleChangeName(e) {
-    setName(e.target.value);
-  }
-
-  const handleSetEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    props.onUpdateUser({
-      name,
-      email,
-    });
-  }
+  React.useEffect(() => {
+    setValues(currentUser);
+  }, [currentUser, setValues]);
 
   return (
     <section className="profile-form">
-      <form className="profile-form__form" noValidate onSubmit={handleSubmit}>
+      <form className="profile-form__form" noValidate onSubmit={props.onSubmit}>
         <div className="profile-form__inputs-container">
           <fieldset className="profile-form__fieldset">
             <label className="profile-form__input-label" htmlFor="name">Имя</label>
             <input
               className="profile-form__input"
-              value="Виталий"
-              onChange={handleChangeName}
+              value={values.name || ""}
+              onChange={handleChange}
               id="name"
-              type="text"
-              name="email"
-              required={true}
+              type="name"
+              name="name"
+              required
               minLength="2"
-              maxLength="40"
+              maxLength="70"
               autoComplete="off"
             />
+            <span className={`profile__input-error-message profile__input-error-message_active`}>
+              {validateName(values.name).error}
+            </span>
           </fieldset>
           <fieldset className="profile-form__fieldset">
             <label className="profile-form__input-label" htmlFor="email">E-mail</label>
             <input
               className="profile-form__input"
-              value="pochta@ya.ru"
-              onChange={handleSetEmail}
+              value={values.email || ""}
+              onChange={handleChange}
               id="email"
               type="email"
               name="email"
-              required={true}
+              required
               minLength="2"
               maxLength="40"
               autoComplete="off"
             />
+            <span className={`profile__input-error-message profile__input-error-message_active`}>
+              {validateName(values.name).error}
+            </span>
           </fieldset>
         </div>
-        <button className="profile-form__submit-button" type="submit">Редактировать</button>
+        <button
+          className={`profile-form__submit-button ${
+            (values.name === currentUser.name && values.email === currentUser.email) ||
+            !validateName(values.name).activeButton || !validateEmail(values.email).activeButton
+              ? "profile-form__submit-button_disabled"
+              : ""
+          }`}
+          type="submit">
+            Редактировать
+        </button>
       </form>
     </section>
   );
