@@ -118,12 +118,12 @@ function App() {
     setLoggedIn(false);
   };
 
-  const handleUpdateUser = (values) => {
+  const handleUpdateUser = (data) => {
     mainApi
-      .updateUserInfo(values)
-      .then((values) => {
-        console.log(values);
-        setCurrentUser(values);
+      .updateUserInfo(data)
+      .then((data) => {
+        console.log(data);
+        setCurrentUser(data);
         setIsOkRequest(true);
       })
       .catch((err) => {
