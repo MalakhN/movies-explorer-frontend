@@ -2,15 +2,15 @@ import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import "./MoviesCard.css";
 
-function MoviesCard({ movie, favoriteMovies, onToggleLike, onRemoveMovie }) {
+function MoviesCard({ movie, savedMovies, onToggleLike, onRemoveMovie }) {
   const { pathname } = useLocation();
 
-  const likedMovie = favoriteMovies
-    ? favoriteMovies.find((item) => item.movieId === movie.id)
+  const likedMovie = savedMovies
+    ? savedMovies.find((item) => item.movieId === movie.id)
     : '';
 
-  const isLiked = favoriteMovies
-    ? favoriteMovies.some((i) => i.movieId === movie.id)
+  const isLiked = savedMovies
+    ? savedMovies.some((i) => i.movieId === movie.id)
     : false;
 
   const cardLikeButtonClassName = `movies-card__save-button ${

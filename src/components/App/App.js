@@ -21,7 +21,7 @@ function App() {
   const [serverError, setServerError] = React.useState({});
   const [isOkRequest, setIsOkRequest] = React.useState(false);
   const [isMoviesError, setIsMoviesError] = React.useState(false);
-  const [favoriteMovies, setFavoriteMovies] = React.useState([]);
+  const [savedMovies, setSavedMovies] = React.useState([]);
 
   React.useEffect(() => {
     const jwt = localStorage.getItem("token");
@@ -49,7 +49,7 @@ function App() {
           setCurrentUser(userData);
           setMovies(initialMovies);
           setIsMoviesError(false);
-          setFavoriteMovies(savedArray);
+          setSavedMovies(savedArray);
           localStorage.setItem("savedMoviesArray", JSON.stringify(savedArray));
         })
         .catch((err) => {
@@ -59,10 +59,10 @@ function App() {
   }, [loggedIn]);
 
   React.useEffect(() => {
-    if (localFavoriteMovies) {
-      setFavoriteMovies(JSON.parse(localFavoriteMovies));
+    if (localSavedMovies) {
+      setSavedMovies(JSON.parse(localSavedMovies));
     }
-  }, [localFavoriteMovies]);
+  }, [localSavedMovies]);
 
   const onRegister = (values) => {
     mainApi
@@ -125,7 +125,7 @@ function App() {
       mainApi
         .saveMovie(movie)
         .then((newLikedMovie) => {
-          setFavoriteMovies([...favoriteMovies, newLikedMovie]);
+          setSavedMovies([...savedMovies, newLikedMovie]);
         })
         .catch((err) => {
           console.error(err);
@@ -137,26 +137,26 @@ function App() {
     mainApi
       .unsaveMovie(id)
       .then(() => {
-        setFavoriteMovies(favoriteMovies.filter((m) => m._id !== id));
+        setSavedMovies(savedMovies.filter((m) => m._id !== id));
       })
       .catch((err) => {
         console.error(`Ошибка: ${err}`);
       });
-    const filteredFavoriteMovies = JSON.parse(
+    const filteredSavedMovies = JSON.parse(
       localStorage.getItem("searchedMoviesFavorite"),
     );
-    if (filteredFavoriteMovies) {
-      const newFilteredFavoriteMoviesArr = filteredFavoriteMovies.filter(
+    if (filteredSavedMovies) {
+      const newFilteredSavedMoviesArr = filteredSavedMovies.filter(
         (movie) => movie._id !== id,
       );
       localStorage.setItem(
         "searchedMoviesFavorite",
-        JSON.stringify(newFilteredFavoriteMoviesArr),
+        JSON.stringify(newFilteredSavedMoviesArr),
       );
     }
   };
 
-  const localFavoriteMovies = localStorage.getItem("savedMoviesArray");
+  const localSavedMovies = localStorage.getItem("savedMoviesArray");
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -171,7 +171,7 @@ function App() {
                     element={Movies}
                     loggedIn={loggedIn}
                     movies={movies}
-                    favoriteMovies={favoriteMovies}
+                    savedMovies={savedMovies}
                     onToggleLike={handleToggleLikeMovie}
                     moviesError={isMoviesError}
                   />
@@ -184,7 +184,7 @@ function App() {
                     element={SavedMovies}
                     loggedIn={loggedIn}
                     onRemoveMovie={handleRemoveMovie}
-                    favoriteMovies={favoriteMovies}
+                    savedMovies={savedMovies}
                   />
                 }
               />

@@ -10,7 +10,7 @@ function MoviesCardList({ movies, onToggleLike, favoriteMovies, onRemoveMovie })
           return (
             <MoviesCard
               onToggleLike={onToggleLike}
-              favoriteMovies={favoriteMovies}
+              savedMovies={savedMovies}
               onRemoveMovie={onRemoveMovie}
               movie={item}
               key={item.id || item.movieId}
