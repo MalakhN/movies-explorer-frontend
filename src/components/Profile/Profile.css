@@ -2,6 +2,8 @@
     max-width: 410px;
     margin: 74px auto 0;
     padding: 0 30px 40px;
+    display: flex;
+    flex-direction: column;
 }
 
 .profile__title {

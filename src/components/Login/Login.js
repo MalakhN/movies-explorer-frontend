@@ -11,7 +11,7 @@ function Login(props) {
           <div className="login__container">
             <SignHeader text="Рады видеть!" />
             <LoginForm onLogin={props.onLogin} loggedIn={props.loggedIn}/>
-            <SignMessage questionText="Ещё не зарегистрированы?" linkPath="/sign-up" linkText="Регистрация"  />
+            <SignMessage questionText="Ещё не зарегистрированы?" linkPath="/signup" linkText="Регистрация"  />
           </div>
         </section>
       </main>
