@@ -1,6 +1,6 @@
 import React from "react";
 import "./Register.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import SignHeader from "../SignHeader/SignHeader";
 import RegisterForm from "../Register/RegisterForm/RegisterForm";
 import SignMessage from "../SignMessage/SignMessage";
@@ -10,7 +10,7 @@ function Register(props) {
 
   React.useEffect(() => {
     if (props.loggedIn) {
-      navigate('/movies');
+      navigate("/movies");
     }
   }, [props.loggedIn, navigate]);
 

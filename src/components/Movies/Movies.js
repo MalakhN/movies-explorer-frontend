@@ -11,19 +11,19 @@ function Movies({ movies, moviesError, savedMovies, onToggleLike }) {
   const [filteredMovies, setFilteredMovies] = React.useState([]);
   const [isChecked, setIsChecked] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
-  const [inputText, setInputText] = React.useState('');
+  const [inputText, setInputText] = React.useState("");
   const [notFoundError, setNotFoundError] = React.useState(false);
   const [showApiError, setShowApiError] = React.useState(false);
   const [nextMovies, setNextMovies] = React.useState(0);
   const [screenWidth, setScreenWidth] = React.useState(window.innerWidth);
-  const searchedMovies = localStorage.getItem('searchedMovies');
-  const localInputVal = localStorage.getItem('inputVal');
-  const localCheckbox = localStorage.getItem('checkboxState');
+  const searchedMovies = localStorage.getItem("searchedMovies");
+  const localInputVal = localStorage.getItem("inputVal");
+  const localCheckbox = localStorage.getItem("checkboxState");
 
   React.useEffect(() => {
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [handleResize]);
 
@@ -46,15 +46,15 @@ function Movies({ movies, moviesError, savedMovies, onToggleLike }) {
   };
 
   const handleCheckboxChange = () => {
-    if (inputText !== '') {
+    if (inputText !== "") {
       setIsChecked(!isChecked);
       handleFilterMovies(inputText, !isChecked);
     }
   };
 
   const handleFilterMovies = (inputValue, isCheckedState) => {
-    localStorage.setItem('inputVal', JSON.stringify(inputValue));
-    localStorage.setItem('checkboxState', JSON.stringify(isCheckedState));
+    localStorage.setItem("inputVal", JSON.stringify(inputValue));
+    localStorage.setItem("checkboxState", JSON.stringify(isCheckedState));
     setNotFoundError(false);
     setIsLoading(true);
     setTimeout(() => {
@@ -69,7 +69,7 @@ function Movies({ movies, moviesError, savedMovies, onToggleLike }) {
         });
         setFilteredMovies(newFilteredArray);
         localStorage.setItem(
-          'searchedMovies',
+          "searchedMovies",
           JSON.stringify(newFilteredArray),
         );
       } else if (!isCheckedState) {
@@ -81,7 +81,7 @@ function Movies({ movies, moviesError, savedMovies, onToggleLike }) {
         });
         setFilteredMovies(newFilteredArray);
         localStorage.setItem(
-          'searchedMovies',
+          "searchedMovies",
           JSON.stringify(newFilteredArray),
         );
       }
@@ -152,7 +152,7 @@ function Movies({ movies, moviesError, savedMovies, onToggleLike }) {
               Ещё
             </button>
           ) : (
-            ''
+            ""
           )}
         </div>
       </main>

@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import "./Navigation.css"
 import HeaderNav from "../Header/HeaderNav/HeaderNav"
 import HeaderAcc from "../Header/HeaderAcc/HeaderAcc"
-import NavDrawer from '../Navigation/NavDrawer/NavDrawer';
+import NavDrawer from "../Navigation/NavDrawer/NavDrawer";
 
 function Navigation() {
   const [isBurgerClick, setIsBurgerClick] = React.useState(false);

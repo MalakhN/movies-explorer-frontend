@@ -63,14 +63,14 @@ function ProfileForm({onUpdateProfile, serverError, isRequestSuccessful}) {
         {isRequestSuccessful ? (
           <span
             className={`profile-form__result-text ${
-              showSuccessText ? '' : 'profile-form__result-text_disabled'
+              showSuccessText ? "" : "profile-form__result-text_disabled"
             }`}>
             Данные пользователя обновлены
           </span>
         ) : (
           <span
             className={`profile-form__result-text ${
-              serverError ? '' : 'profile-form__result-text_disabled'
+              serverError ? "" : "profile-form__result-text_disabled"
             }`}>
             Ошибка сервера
           </span>

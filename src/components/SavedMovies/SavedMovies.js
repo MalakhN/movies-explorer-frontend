@@ -8,12 +8,12 @@ import Footer from "../Footer/Footer";
 
 function SavedMovies({ savedMovies, onRemoveMovie }) {
   const [isChecked, setIsChecked] = React.useState(false);
-  const [inputText, setInputText] = React.useState('');
+  const [inputText, setInputText] = React.useState("");
   const [filteredMovies, setFilteredMovies] = React.useState([]);
   const [notFoundError, setNotFoundError] = React.useState(false);
-  const searchedMovies = localStorage.getItem('searchedMoviesFavorite');
-  const localInputVal = localStorage.getItem('inputValFavorite');
-  const localCheckbox = localStorage.getItem('checkboxStateFavorite');
+  const searchedMovies = localStorage.getItem("searchedMoviesSaved");
+  const localInputVal = localStorage.getItem("inputValFavorite");
+  const localCheckbox = localStorage.getItem("checkboxStateFavorite");
 
   React.useEffect(() => {
     if (searchedMovies) {
@@ -42,16 +42,16 @@ function SavedMovies({ savedMovies, onRemoveMovie }) {
   };
 
   const handleCheckboxChange = () => {
-    if (inputText !== '') {
+    if (inputText !== "") {
       setIsChecked(!isChecked);
       handleFilterMovies(inputText, !isChecked);
     }
   };
 
   const handleFilterMovies = (inputValue, isCheckedState) => {
-    localStorage.setItem('inputValFavorite', JSON.stringify(inputValue));
+    localStorage.setItem("inputValFavorite", JSON.stringify(inputValue));
     localStorage.setItem(
-      'checkboxStateFavorite',
+      "checkboxStateFavorite",
       JSON.stringify(isCheckedState),
     );
     let newFilteredArray = [];
@@ -65,7 +65,7 @@ function SavedMovies({ savedMovies, onRemoveMovie }) {
       });
       setFilteredMovies(newFilteredArray);
       localStorage.setItem(
-        'searchedMoviesFavorite',
+        "searchedMoviesSaved",
         JSON.stringify(newFilteredArray),
       );
     } else if (!isCheckedState) {
@@ -77,7 +77,7 @@ function SavedMovies({ savedMovies, onRemoveMovie }) {
       });
       setFilteredMovies(newFilteredArray);
       localStorage.setItem(
-        'searchedMoviesFavorite',
+        "searchedMoviesSaved",
         JSON.stringify(newFilteredArray),
       );
     }

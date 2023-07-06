@@ -1,6 +1,6 @@
 import React from "react";
 import "./Login.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import SignHeader from "../SignHeader/SignHeader";
 import LoginForm from "../Login/LoginForm/LoginForm";
 import SignMessage from "../SignMessage/SignMessage";
@@ -10,7 +10,7 @@ function Login(props) {
 
   React.useEffect(() => {
     if (props.loggedIn) {
-      navigate('/movies');
+      navigate("/movies");
     }
   }, [props.loggedIn, navigate]);
 
