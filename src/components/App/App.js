@@ -212,7 +212,6 @@ function App() {
                     onUpdateProfile={handleUpdateUser}
                     loggedIn={loggedIn}
                     isOkRequest={isOkRequest}
-                    serverError={serverError}
                   />
                 }
               />
