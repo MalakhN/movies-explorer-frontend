@@ -6,7 +6,7 @@
 }
 
 .profile-form__inputs-container {
-    margin: 0 0 220px;
+    margin: 0 0 200px;
 }
 
 .profile-form__fieldset {
@@ -57,7 +57,7 @@
     color: #E8E8E8;
   }
 
-.profile__input-error-message {
+.profile-form__input-error-message {
     color: #FF4062;
     font-weight: 400;
     font-size: 10px;
@@ -65,9 +65,33 @@
     opacity: 0;
 }
 
-.profile__input-error-message_active {
+.profile-form__input-error-message_active {
     opacity: 1;
   }
+
+.profile-form__success-text {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    opacity: 1;
+}
+
+.profile-form__success-text_disabled {
+    opacity: 0;
+}
+
+.profile-form__error-text {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    opacity: 1;
+}
+
+.profile__error-text_disabled {
+    opacity: 0;
+}
 
 @media (max-width: 768px) {
     .profile-form__form {
@@ -75,7 +99,7 @@
     }
 
     .profile-form__inputs-container {
-        margin: 0 0 210px;
+        margin: 0 0 90px;
     }
 }
 
@@ -85,6 +109,6 @@
     }
 
     .profile-form__inputs-container {
-        margin: 0 0 379px;
+        margin: 0 0 359px;
     }
 }
