@@ -102,8 +102,8 @@ function Movies({ movies, moviesError, savedMovies, onToggleLike }) {
   }, []);
 
   const renderMovies = React.useMemo(() => {
-    const paginationCounter = screenWidth < 768 ? 5 : screenWidth < 1280 ? 8 : 12;
-    return filteredMovies.slice(0, paginationCounter + nextMovies);
+    const cardsCounter = screenWidth < 768 ? 5 : screenWidth < 1280 ? 8 : 12;
+    return filteredMovies.slice(0, cardsCounter + nextMovies);
   }, [nextMovies, screenWidth, filteredMovies]);
 
   const handleClickButtonMore = () => {
