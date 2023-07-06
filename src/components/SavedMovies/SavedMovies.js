@@ -12,8 +12,8 @@ function SavedMovies({ savedMovies, onRemoveMovie }) {
   const [filteredMovies, setFilteredMovies] = React.useState([]);
   const [notFoundError, setNotFoundError] = React.useState(false);
   const searchedMovies = localStorage.getItem("searchedMoviesSaved");
-  const localInputVal = localStorage.getItem("inputValFavorite");
-  const localCheckbox = localStorage.getItem("checkboxStateFavorite");
+  const localInputVal = localStorage.getItem("inputValSaved");
+  const localCheckbox = localStorage.getItem("checkboxStateSaved");
 
   React.useEffect(() => {
     if (searchedMovies) {
@@ -49,9 +49,9 @@ function SavedMovies({ savedMovies, onRemoveMovie }) {
   };
 
   const handleFilterMovies = (inputValue, isCheckedState) => {
-    localStorage.setItem("inputValFavorite", JSON.stringify(inputValue));
+    localStorage.setItem("inputValSaved", JSON.stringify(inputValue));
     localStorage.setItem(
-      "checkboxStateFavorite",
+      "checkboxStateSaved",
       JSON.stringify(isCheckedState),
     );
     let newFilteredArray = [];
