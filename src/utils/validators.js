@@ -41,7 +41,7 @@ export const validateName = (name) => {
     } else if (!NAME_REGEXP.test(name.toLowerCase())) {
       return {
         error:
-          "Используйте исключительно латинские и кириллические буквы, пробел и дефис",
+          "Используйте латинские и кириллические буквы, пробел и дефис",
         activeButton: false,
       };
     }
