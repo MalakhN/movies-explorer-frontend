@@ -1,7 +1,7 @@
 .sign__fieldset {
     border: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 24px;
 }
 
 .sign__input-container {
@@ -10,7 +10,6 @@
     padding: 0 0 10px;
     border: none;
     border-bottom: 1px solid #E8E8E8;
-    margin: 0 0 24px;
 }
 
 .sign__input-label {
@@ -27,3 +26,16 @@
     outline-color: #A0A0A0;
     outline-offset: 2px;
 }
+
+.sign__input-error-message {
+    color: #FF4062;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    opacity: 0;
+    margin: 6px 0 0;
+  }
+
+  .sign__input-error-message_active {
+    opacity: 1;
+  }
