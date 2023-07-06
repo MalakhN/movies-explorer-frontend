@@ -7,7 +7,7 @@ import Header from "../Header/Header"
 import Navigation from "../Navigation/Navigation"
 import ProfileForm from "../Profile/ProfileForm/ProfileForm";
 
-function Profile({ onSignOut, onUpdateProfile }) {
+function Profile(props) {
   const currentUser = React.useContext(CurrentUserContext);
 
   return (
@@ -19,8 +19,8 @@ function Profile({ onSignOut, onUpdateProfile }) {
         <section className="profile">
           <div className="profile__container">
             <h1 className="profile__title">Привет, {currentUser.name}!</h1>
-            <ProfileForm onUpdateProfile={onUpdateProfile} />
-            <Link to="/signin" className="profile__exit-button" onClick={onSignOut}>
+            <ProfileForm onUpdateProfile={props.onUpdateProfile} />
+            <Link to="/signin" className="profile__exit-button" onClick={props.onSignOut}>
               Выйти из аккаунта
             </Link>
           </div>
