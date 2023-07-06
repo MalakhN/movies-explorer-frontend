@@ -14,7 +14,7 @@ function ProfileForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onUpdateProfile(values);
+    props.onUpdateProfile(values);
   };
 
   return (
