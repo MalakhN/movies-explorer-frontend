@@ -2,7 +2,7 @@ import React from "react";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import "./MoviesCardList.css";
 
-function MoviesCardList({ movies, onToggleLike, favoriteMovies, onRemoveMovie }) {
+function MoviesCardList({ movies, onToggleLike, savedMovies, onRemoveMovie }) {
   return (
     <section className="movies-card-list">
       <ul className="movies-card-list__elements">
