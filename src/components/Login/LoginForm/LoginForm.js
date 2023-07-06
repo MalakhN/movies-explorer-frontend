@@ -32,9 +32,6 @@ function LoginForm(props) {
         maxLength="70"
         autoComplete="off"
       />
-      <span className={`sign__input-error-message ${isValid ? '' : 'sign__input-error-message_active'}`}>
-        {validateEmail(values.email).error}
-      </span>
       <Input
         value={values.password || ''}
         onChange={handleChange}
@@ -47,9 +44,6 @@ function LoginForm(props) {
         maxLength="40"
         autoComplete="off"
       />
-      <span className={`sign__input-error-message ${isValid ? '' : 'sign__input-error-message_active'}`}>
-        {errors.password}
-      </span>
     </Form>
   )
 }

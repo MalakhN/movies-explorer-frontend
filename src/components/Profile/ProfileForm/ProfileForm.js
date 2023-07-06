@@ -30,10 +30,10 @@ function ProfileForm(props) {
               maxLength="70"
               autoComplete="off"
             />
-            <span className={`profile__input-error-message profile__input-error-message_active`}>
-              {validateName(values.name).error}
-            </span>
           </fieldset>
+          <span className={`profile__input-error-message profile__input-error-message_active`}>
+            {validateName(values.name).error}
+          </span>
           <fieldset className="profile-form__fieldset">
             <label className="profile-form__input-label" htmlFor="email">E-mail</label>
             <input
@@ -48,10 +48,10 @@ function ProfileForm(props) {
               maxLength="40"
               autoComplete="off"
             />
-            <span className={`profile__input-error-message profile__input-error-message_active`}>
-              {validateName(values.name).error}
-            </span>
           </fieldset>
+          <span className={`profile__input-error-message profile__input-error-message_active`}>
+            {validateEmail(values.email).error}
+          </span>
         </div>
         <button
           className={`profile-form__submit-button ${
