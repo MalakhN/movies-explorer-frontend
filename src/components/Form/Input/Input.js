@@ -1,6 +1,9 @@
 import "./Input.css";
+import { useFormAndValidation } from "../../../hooks/useFormAndValidation";
 
 function Input(props) {
+  const { isValid } = useFormAndValidation();
+
   return (
     <fieldset className="sign__fieldset">
       <div className="sign__input-container">
@@ -17,6 +20,9 @@ function Input(props) {
           required={props.required}
           autoComplete={props.autoComplete}
         />
+        <span className={`sign__input-error-message ${isValid ? "" : "sign__input-error-message_active"}`}>
+        {props.errorText}
+      </span>
       </div>
     </fieldset>
   )
