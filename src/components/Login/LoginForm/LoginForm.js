@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
 import Form from "../../Form/Form";
 import Input from "../../Form/Input/Input";
 import { useFormAndValidation } from '../../../hooks/useFormAndValidation';
@@ -7,13 +6,6 @@ import { validateEmail } from '../../../utils/validators';
 
 function LoginForm(props) {
   const { values, handleChange, errors, isValid } = useFormAndValidation();
-  const navigate = useNavigate();
-
-  React.useEffect(() => {
-    if (props.loggedIn) {
-      navigate('/movies');
-    }
-  }, [props.loggedIn, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,6 +19,7 @@ function LoginForm(props) {
     <Form
       submitButtonText="Войти"
       onSubmit={handleSubmit}
+      isValid={isValid}
     >
       <Input
         value={values.email || ''}
