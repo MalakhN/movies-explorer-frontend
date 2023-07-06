@@ -150,7 +150,7 @@ function App() {
 
   const handleRemoveMovie = (id) => {
     mainApi
-      .deleteMovie(id)
+      .unsaveMovie(id)
       .then(() => {
         setFavoriteMovies(favoriteMovies.filter((m) => m._id !== id));
       })
