@@ -38,7 +38,7 @@ function ProfileForm({onUpdateProfile, serverError, isOkRequest}) {
               autoComplete="off"
             />
           </fieldset>
-          <span className={`profile__input-error-message profile__input-error-message_active`}>
+          <span className={`profile-form__input-error-message profile-form__input-error-message_active`}>
             {validateName(values.name).error}
           </span>
           <fieldset className="profile-form__fieldset">
@@ -56,21 +56,21 @@ function ProfileForm({onUpdateProfile, serverError, isOkRequest}) {
               autoComplete="off"
             />
           </fieldset>
-          <span className={`profile__input-error-message profile__input-error-message_active`}>
+          <span className={`profile-form__input-error-message profile-form__input-error-message_active`}>
             {validateEmail(values.email).error}
           </span>
         </div>
         {isOkRequest ? (
           <span
-            className={`profile__success-text ${
-              showSuccessText ? '' : 'profile__success-text_disabled'
+            className={`profile-form__success-text ${
+              showSuccessText ? '' : 'profile-form__success-text_disabled'
             }`}>
             Данные пользователя обновлены
           </span>
         ) : (
           <span
-            className={`profile__error-text ${
-              serverError ? '' : 'profile__error-text_disabled'
+            className={`profile-form__error-text ${
+              serverError ? '' : 'profile-form__error-text_disabled'
             }`}>
             Ошибка сервера
           </span>
