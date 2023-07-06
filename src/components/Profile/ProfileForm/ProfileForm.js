@@ -4,7 +4,7 @@ import { CurrentUserContext } from "../../../contexts/CurrentUserContext";
 import { useFormAndValidation } from "../../../hooks/useFormAndValidation";
 import { validateEmail, validateName } from "../../../utils/validators";
 
-function ProfileForm({onUpdateProfile, serverError, isOkRequest}) {
+function ProfileForm({onUpdateProfile, serverError, isRequestSuccessful}) {
   const { values, handleChange, setValues } = useFormAndValidation();
   const currentUser = React.useContext(CurrentUserContext);
   const [showSuccessText, setShowSuccessText] = React.useState(false);
@@ -60,7 +60,7 @@ function ProfileForm({onUpdateProfile, serverError, isOkRequest}) {
             {validateEmail(values.email).error}
           </span>
         </div>
-        {isOkRequest ? (
+        {isRequestSuccessful ? (
           <span
             className={`profile-form__result-text ${
               showSuccessText ? '' : 'profile-form__result-text_disabled'
