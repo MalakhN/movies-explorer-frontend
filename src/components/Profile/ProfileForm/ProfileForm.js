@@ -61,20 +61,21 @@ function ProfileForm({onUpdateProfile, serverError, isOkRequest}) {
           </span>
         </div>
         {isOkRequest ? (
-            <span
-              className={`profile__success-text ${
-                showSuccessText ? '' : 'profile__success-text_disabled'
-              }`}>
-              Данные пользователя обновлены
-            </span>
-          ) : (
-            <span
-              className={`profile__error-text ${
-                serverError ? '' : 'profile__error-text_disabled'
-              }`}>
-              Ошибка сервера
-            </span>
-          )}
+          <span
+            className={`profile__success-text ${
+              showSuccessText ? '' : 'profile__success-text_disabled'
+            }`}>
+            Данные пользователя обновлены
+          </span>
+        ) : (
+          <span
+            className={`profile__error-text ${
+              serverError ? '' : 'profile__error-text_disabled'
+            }`}>
+            Ошибка сервера
+          </span>
+        )
+        }
         <button
           className={`profile-form__submit-button ${
             (values.name === currentUser.name && values.email === currentUser.email) ||
