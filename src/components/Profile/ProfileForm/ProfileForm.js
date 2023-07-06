@@ -62,15 +62,15 @@ function ProfileForm({onUpdateProfile, serverError, isOkRequest}) {
         </div>
         {isOkRequest ? (
           <span
-            className={`profile-form__success-text ${
-              showSuccessText ? '' : 'profile-form__success-text_disabled'
+            className={`profile-form__result-text ${
+              showSuccessText ? '' : 'profile-form__result-text_disabled'
             }`}>
             Данные пользователя обновлены
           </span>
         ) : (
           <span
-            className={`profile-form__error-text ${
-              serverError ? '' : 'profile-form__error-text_disabled'
+            className={`profile-form__result-text ${
+              serverError ? '' : 'profile-form__result-text_disabled'
             }`}>
             Ошибка сервера
           </span>
