@@ -21,7 +21,7 @@ function Register(props) {
           <div className="register__container">
             <SignHeader text="Добро пожаловать!" />
             <RegisterForm onRegister={props.onRegister} />
-            <SignMessage questionText="Уже зарегистрированы?" linkPath="/sign-in" linkText="Войти"  />
+            <SignMessage questionText="Уже зарегистрированы?" linkPath="/signin" linkText="Войти"  />
           </div>
         </section>
       </main>
