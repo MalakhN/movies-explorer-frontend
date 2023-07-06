@@ -97,8 +97,8 @@ function App() {
     localStorage.removeItem("inputVal");
     localStorage.removeItem("checkboxState");
     localStorage.removeItem("searchedMoviesSaved");
-    localStorage.removeItem("inputValFavorite");
-    localStorage.removeItem("checkboxStateFavorite");
+    localStorage.removeItem("inputValSaved");
+    localStorage.removeItem("checkboxStateSaved");
     navigate("/", { replace: true });
     setLoggedIn(false);
   };
