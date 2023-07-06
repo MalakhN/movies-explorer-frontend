@@ -9,6 +9,7 @@
     line-height: 16px;
     background-color: #000000;
     color: #ffffff;
+    text-decoration: none;
   }
 
   .header__entrance-button:hover {
