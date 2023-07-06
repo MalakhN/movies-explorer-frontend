@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import MainApi from "../../utils/MainApi";
-import MoviesApi from "../../utils/MoviesApi";
+import mainApi from "../../utils/MainApi";
+import moviesApi from "../../utils/MoviesApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Main from "../Main/Main";
 import Movies from "../Movies/Movies";
@@ -22,21 +22,6 @@ function App() {
   const [isOkRequest, setIsOkRequest] = React.useState(false);
   const [isMoviesError, setIsMoviesError] = React.useState(false);
   const [favoriteMovies, setFavoriteMovies] = React.useState([]);
-
-  const mainApi = new MainApi({
-    url: "https://api.movies-explorer.nomoredomains.rocks",
-    headers: {
-      "Content-Type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  });
-
-  const moviesApi = new MoviesApi({
-    url: "https://api.nomoreparties.co/beatfilm-movies",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
 
   React.useEffect(() => {
     const jwt = localStorage.getItem("token");
