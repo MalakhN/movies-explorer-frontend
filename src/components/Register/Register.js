@@ -10,7 +10,7 @@ function Register(props) {
         <section className="register">
           <div className="register__container">
             <SignHeader text="Добро пожаловать!" />
-            <RegisterForm onRegister={props.onRegister} loggedIn={loggedIn}/>
+            <RegisterForm onRegister={props.onRegister} loggedIn={props.loggedIn}/>
             <SignMessage questionText="Уже зарегистрированы?" linkPath="/sign-in" linkText="Войти"  />
           </div>
         </section>

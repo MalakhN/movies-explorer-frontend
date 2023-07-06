@@ -41,7 +41,7 @@ function RegisterForm(props) {
         {validateName(values.name).error}
       </span>
       <Input
-        value={email}
+        value={values.email || ''}
         onChange={handleChange}
         id="email"
         type="email"
@@ -56,7 +56,7 @@ function RegisterForm(props) {
         {validateEmail(values.email).error}
       </span>
       <Input
-        value={password}
+        value={values.password || ''}
         onChange={handleChange}
         id="password"
         type="password"

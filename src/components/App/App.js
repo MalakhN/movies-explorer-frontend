@@ -17,6 +17,11 @@ function App() {
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = React.useState({});
   const [loggedIn, setLoggedIn] = React.useState(false);
+  const [movies, setMovies] = React.useState([]);
+  const [serverError, setServerError] = React.useState({});
+  const [isOkRequest, setIsOkRequest] = React.useState(false);
+  const [isMoviesError, setIsMoviesError] = React.useState(false);
+  const [favoriteMovies, setFavoriteMovies] = React.useState([]);
 
   const mainApi = new MainApi({
     url: "https://api.movies-explorer.nomoredomains.rocks",
@@ -206,6 +211,7 @@ function App() {
                     onSignOut={onSignOut}
                     onUpdateProfile={handleUpdateUser}
                     loggedIn={loggedIn}
+                    isOkRequest={isOkRequest}
                   />
                 }
               />
