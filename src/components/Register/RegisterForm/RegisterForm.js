@@ -29,10 +29,8 @@ function RegisterForm(props) {
         minLength="2"
         maxLength="70"
         autoComplete="off"
+        errorText={validateName(values.name).error}
       />
-      <span className={`sign__input-error-message ${isValid ? "" : "sign__input-error-message_active"}`}>
-        {validateName(values.name).error}
-      </span>
       <Input
         value={values.email || ""}
         onChange={handleChange}
@@ -44,10 +42,8 @@ function RegisterForm(props) {
         minLength="2"
         maxLength="40"
         autoComplete="off"
+        errorText={validateEmail(values.email).error}
       />
-      <span className={`sign__input-error-message ${isValid ? "" : "sign__input-error-message_active"}`}>
-        {validateEmail(values.email).error}
-      </span>
       <Input
         value={values.password || ""}
         onChange={handleChange}
@@ -59,10 +55,8 @@ function RegisterForm(props) {
         minLength="2"
         maxLength="40"
         autoComplete="off"
+        errorText={errors.password}
       />
-      <span className={`sign__input-error ${isValid ? "" : "sign__input-error_active"}`}>
-        {errors.password}
-      </span>
     </Form>
   )
 }
