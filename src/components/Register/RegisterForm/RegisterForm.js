@@ -1,19 +1,12 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
-import { useFormAndValidation } from '../../../hooks/useFormAndValidation';
-import { validateEmail, validateName } from '../../../utils/validators';
+import { useFormAndValidation } from "../../../hooks/useFormAndValidation";
+import { validateEmail, validateName } from "../../../utils/validators";
 import Form from "../../Form/Form";
 import Input from "../../Form/Input/Input";
+import "./RegisterForm.css";
 
 function RegisterForm(props) {
   const { values, handleChange, errors, isValid } = useFormAndValidation();
-  const navigate = useNavigate();
-
-  React.useEffect(() => {
-    if (props.loggedIn) {
-      navigate('/movies');
-    }
-  }, [props.loggedIn, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +19,7 @@ function RegisterForm(props) {
       onSubmit={handleSubmit}
     >
       <Input
-        value={values.name || ''}
+        value={values.name || ""}
         onChange={handleChange}
         id="name"
         type="name"
@@ -37,11 +30,11 @@ function RegisterForm(props) {
         maxLength="70"
         autoComplete="off"
       />
-      <span className={`sign__input-error-message ${isValid ? '' : 'sign__input-error-message_active'}`}>
+      <span className={`sign__input-error-message ${isValid ? "" : "sign__input-error-message_active"}`}>
         {validateName(values.name).error}
       </span>
       <Input
-        value={values.email || ''}
+        value={values.email || ""}
         onChange={handleChange}
         id="email"
         type="email"
@@ -52,11 +45,11 @@ function RegisterForm(props) {
         maxLength="40"
         autoComplete="off"
       />
-      <span className={`sign__input-error-message ${isValid ? '' : 'sign__input-error-message_active'}`}>
+      <span className={`sign__input-error-message ${isValid ? "" : "sign__input-error-message_active"}`}>
         {validateEmail(values.email).error}
       </span>
       <Input
-        value={values.password || ''}
+        value={values.password || ""}
         onChange={handleChange}
         id="password"
         type="password"
@@ -67,7 +60,7 @@ function RegisterForm(props) {
         maxLength="40"
         autoComplete="off"
       />
-      <span className={`sign__input-error ${isValid ? '' : 'sign__input-error_active'}`}>
+      <span className={`sign__input-error ${isValid ? "" : "sign__input-error_active"}`}>
         {errors.password}
       </span>
     </Form>
