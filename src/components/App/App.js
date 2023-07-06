@@ -19,7 +19,7 @@ function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [movies, setMovies] = React.useState([]);
   const [serverError, setServerError] = React.useState({});
-  const [isOkRequest, setIsOkRequest] = React.useState(false);
+  const [isRequestSuccessful, setIsRequestSuccessful] = React.useState(false);
   const [isMoviesError, setIsMoviesError] = React.useState(false);
   const [savedMovies, setSavedMovies] = React.useState([]);
 
@@ -109,12 +109,12 @@ function App() {
       .then((data) => {
         console.log(data);
         setCurrentUser(data);
-        setIsOkRequest(true);
+        setIsRequestSuccessful(true);
       })
       .catch((err) => {
         console.error(`${err}`);
         setServerError(err);
-        setIsOkRequest(false);
+        setIsRequestSuccessful(false);
       });
   };
 
@@ -196,7 +196,7 @@ function App() {
                     onSignOut={onSignOut}
                     onUpdateProfile={handleUpdateUser}
                     loggedIn={loggedIn}
-                    isOkRequest={isOkRequest}
+                    isRequestSuccessful={isRequestSuccessful}
                   />
                 }
               />
