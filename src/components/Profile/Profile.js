@@ -8,8 +8,12 @@ import Navigation from "../Navigation/Navigation"
 import ProfileForm from "../Profile/ProfileForm/ProfileForm";
 
 function Profile({ onSignOut, onUpdateProfile }) {
-  const { values } = useFormAndValidation();
+  const { values, setValues } = useFormAndValidation();
   const currentUser = React.useContext(CurrentUserContext);
+
+  React.useEffect(() => {
+    setValues(currentUser);
+  }, [currentUser, setValues]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

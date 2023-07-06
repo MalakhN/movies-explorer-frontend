@@ -5,12 +5,8 @@ import { useFormAndValidation } from "../../../hooks/useFormAndValidation";
 import { validateEmail, validateName } from "../../../utils/validators";
 
 function ProfileForm(props) {
-  const { values, handleChange, setValues } = useFormAndValidation();
+  const { values, handleChange } = useFormAndValidation();
   const currentUser = React.useContext(CurrentUserContext);
-
-  React.useEffect(() => {
-    setValues(currentUser);
-  }, [currentUser, setValues]);
 
   return (
     <section className="profile-form">
