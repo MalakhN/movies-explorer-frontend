@@ -4,9 +4,10 @@ import { CurrentUserContext } from "../../../contexts/CurrentUserContext";
 import { useFormAndValidation } from "../../../hooks/useFormAndValidation";
 import { validateEmail, validateName } from "../../../utils/validators";
 
-function ProfileForm(props) {
+function ProfileForm({onUpdateProfile, serverError, isOkRequest}) {
   const { values, handleChange, setValues } = useFormAndValidation();
   const currentUser = React.useContext(CurrentUserContext);
+  const [showSuccessText, setShowSuccessText] = React.useState(false);
 
   React.useEffect(() => {
     setValues(currentUser);
@@ -14,7 +15,8 @@ function ProfileForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.onUpdateProfile(values);
+    onUpdateProfile(values);
+    setShowSuccessText(true);
   };
 
   return (
@@ -58,6 +60,21 @@ function ProfileForm(props) {
             {validateEmail(values.email).error}
           </span>
         </div>
+        {isOkRequest ? (
+            <span
+              className={`profile__success-text ${
+                showSuccessText ? '' : 'profile__success-text_disabled'
+              }`}>
+              Данные пользователя обновлены
+            </span>
+          ) : (
+            <span
+              className={`profile__error-text ${
+                serverError ? '' : 'profile__error-text_disabled'
+              }`}>
+              Ошибка сервера
+            </span>
+          )}
         <button
           className={`profile-form__submit-button ${
             (values.name === currentUser.name && values.email === currentUser.email) ||
