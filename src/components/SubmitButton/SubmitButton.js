@@ -1,12 +1,14 @@
 import "./SubmitButton.css";
-import { useFormAndValidation } from '../../hooks/useFormAndValidation';
 
-function SubmitButton({ text }) {
-  const { values, isValid } = useFormAndValidation();
+function SubmitButton({ text, isActive }) {
+  const buttonClassName = isActive ? 'sign__submit-button' : 'sign__submit-button sign__submit-button_disabled'
 
   return (
-    <button className={`sign__submit-button ${isValid ? "" : "sign__submit-button_disabled"}`}>{text}</button>
+    <button className={buttonClassName} disabled={!isActive}>{text}</button>
   )
 }
 
 export default SubmitButton;
+
+
+

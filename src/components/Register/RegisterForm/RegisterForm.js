@@ -17,6 +17,7 @@ function RegisterForm(props) {
     <Form
       submitButtonText="Зарегистрироваться"
       onSubmit={handleSubmit}
+      isValid={isValid}
     >
       <Input
         value={values.name || ""}
