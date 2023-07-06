@@ -54,6 +54,7 @@
 .profile-form__submit-button_disabled {
     cursor: not-allowed;
     pointer-events: none;
+    color: #E8E8E8;
   }
 
 .profile__input-error-message {
