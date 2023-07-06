@@ -20,10 +20,10 @@ function Input(props) {
           required={props.required}
           autoComplete={props.autoComplete}
         />
-        <span className={`sign__input-error-message ${isValid ? "" : "sign__input-error-message_active"}`}>
+      </div>
+      <span className={`sign__input-error-message ${isValid ? "" : "sign__input-error-message_active"}`}>
         {props.errorText}
       </span>
-      </div>
     </fieldset>
   )
 }
