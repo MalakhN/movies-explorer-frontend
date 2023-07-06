@@ -42,7 +42,7 @@ function SavedMovies({ savedMovies, onRemoveMovie }) {
   };
 
   const handleCheckboxChange = () => {
-    if (inputText !== "") {
+    if (inputText !== '') {
       setIsChecked(!isChecked);
       handleFilterMovies(inputText, !isChecked);
     }
