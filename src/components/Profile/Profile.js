@@ -19,7 +19,7 @@ function Profile(props) {
         <section className="profile">
           <div className="profile__container">
             <h1 className="profile__title">Привет, {currentUser.name}!</h1>
-            <ProfileForm onUpdateProfile={props.onUpdateProfile} />
+            <ProfileForm onUpdateProfile={props.onUpdateProfile} serverError={props.serverError} isOkRequest={props.isOkRequest} />
             <Link to="/signin" className="profile__exit-button" onClick={props.onSignOut}>
               Выйти из аккаунта
             </Link>
