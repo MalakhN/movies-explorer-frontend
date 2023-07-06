@@ -7,7 +7,7 @@ import Preloader from "./Preloader/Preloader"
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import Footer from "../Footer/Footer";
 
-function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
+function Movies({ movies, moviesError, savedMovies, onToggleLike }) {
   const [filteredMovies, setFilteredMovies] = React.useState([]);
   const [isChecked, setIsChecked] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -138,7 +138,7 @@ function Movies({ movies, moviesError, favoriteMovies, onToggleLike }) {
         ) : (
           <MoviesCardList
             movies={renderMovies}
-            favoriteMovies={favoriteMovies}
+            savedMovies={savedMovies}
             onToggleLike={onToggleLike}
             moviesError={moviesError}
           />

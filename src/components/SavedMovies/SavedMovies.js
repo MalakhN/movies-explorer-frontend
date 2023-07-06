@@ -6,7 +6,7 @@ import SearchForm from "../Movies/SearchForm/SearchForm";
 import MoviesCardList from "../Movies/MoviesCardList/MoviesCardList";
 import Footer from "../Footer/Footer";
 
-function SavedMovies({ favoriteMovies, onRemoveMovie }) {
+function SavedMovies({ savedMovies, onRemoveMovie }) {
   const [isChecked, setIsChecked] = React.useState(false);
   const [inputText, setInputText] = React.useState('');
   const [filteredMovies, setFilteredMovies] = React.useState([]);
@@ -32,9 +32,9 @@ function SavedMovies({ favoriteMovies, onRemoveMovie }) {
     if (searchedMovies) {
       setFilteredMovies(JSON.parse(searchedMovies));
     } else {
-      setFilteredMovies(favoriteMovies);
+      setFilteredMovies(savedMovies);
     }
-  }, [searchedMovies, favoriteMovies]);
+  }, [searchedMovies, savedMovies]);
 
   const handleSearchChange = (e) => {
     e.preventDefault();
@@ -56,7 +56,7 @@ function SavedMovies({ favoriteMovies, onRemoveMovie }) {
     );
     let newFilteredArray = [];
     if (isCheckedState) {
-      newFilteredArray = favoriteMovies.filter((movie) => {
+      newFilteredArray = savedMovies.filter((movie) => {
         return (
           (movie.nameRU.toLowerCase().includes(inputValue.toLowerCase()) ||
             movie.nameEN.toLowerCase().includes(inputValue.toLowerCase())) &&
@@ -69,7 +69,7 @@ function SavedMovies({ favoriteMovies, onRemoveMovie }) {
         JSON.stringify(newFilteredArray),
       );
     } else if (!isCheckedState) {
-      newFilteredArray = favoriteMovies.filter((movie) => {
+      newFilteredArray = savedMovies.filter((movie) => {
         return (
           movie.nameRU.toLowerCase().includes(inputValue.toLowerCase()) ||
           movie.nameEN.toLowerCase().includes(inputValue.toLowerCase())
