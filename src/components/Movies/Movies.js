@@ -41,7 +41,6 @@ function Movies({ movies, moviesError, savedMovies, onToggleLike }) {
 
   const handleSearchChange = (e) => {
     e.preventDefault();
-
     setInputText(e.target.value);
   };
 
