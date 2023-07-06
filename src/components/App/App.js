@@ -178,7 +178,7 @@ function App() {
       <div className="App">
         <div className="page">
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<Main loggedIn={loggedIn} />} />
             <Route
                 path="/movies"
                 element={
