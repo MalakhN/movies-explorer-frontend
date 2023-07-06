@@ -1,3 +1,4 @@
+import React from "react";
 import "./Register.css";
 import { useNavigate } from 'react-router-dom';
 import SignHeader from "../SignHeader/SignHeader";
