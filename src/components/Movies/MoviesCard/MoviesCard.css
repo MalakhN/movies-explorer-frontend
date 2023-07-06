@@ -22,6 +22,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    max-width: 240px;
 }
 
 .movies-card__duration {
@@ -70,6 +71,10 @@
         width: 342px;
         height: 190px;
     }
+
+    .movies-card__name {
+        max-width: 224px;
+    }
 }
 
 @media (max-width: 640px) {
@@ -84,6 +89,7 @@
 
     .movies-card__name {
         font-size: 12px;
+        max-width: 200px;
     }
 
     .movies-card__duration {
