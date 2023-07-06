@@ -1,4 +1,4 @@
-export default class MoviesApi {
+class MoviesApi {
   constructor({ url, headers }) {
     this._url = url;
     this._headers = headers;
@@ -26,3 +26,10 @@ export default class MoviesApi {
     });
   }
 }
+
+export default new MoviesApi({
+  url: "https://api.nomoreparties.co/beatfilm-movies",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});

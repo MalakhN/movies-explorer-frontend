@@ -1,6 +1,6 @@
 import { BASE_LINK } from "./constants";
 
-export default class MainApi {
+class MainApi {
   constructor({ url, headers }) {
     this._url = url;
     this._headers = headers;
@@ -111,3 +111,11 @@ export default class MainApi {
     });
   }
 }
+
+export default new MainApi({
+  url: "https://api.movies-explorer.nomoredomains.rocks",
+  headers: {
+    "Content-Type": "application/json",
+    authorization: `Bearer ${localStorage.getItem("token")}`,
+  },
+});
