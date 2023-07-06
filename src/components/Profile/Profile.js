@@ -8,17 +8,7 @@ import Navigation from "../Navigation/Navigation"
 import ProfileForm from "../Profile/ProfileForm/ProfileForm";
 
 function Profile({ onSignOut, onUpdateProfile }) {
-  const { values, setValues } = useFormAndValidation();
   const currentUser = React.useContext(CurrentUserContext);
-
-  React.useEffect(() => {
-    setValues(currentUser);
-  }, [currentUser, setValues]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onUpdateProfile(values);
-  };
 
   return (
     <>
@@ -29,7 +19,7 @@ function Profile({ onSignOut, onUpdateProfile }) {
         <section className="profile">
           <div className="profile__container">
             <h1 className="profile__title">Привет, {currentUser.name}!</h1>
-            <ProfileForm onSubmit={handleSubmit} />
+            <ProfileForm onUpdateProfile={onUpdateProfile} />
             <Link to="/signin" className="profile__exit-button" onClick={onSignOut}>
               Выйти из аккаунта
             </Link>
