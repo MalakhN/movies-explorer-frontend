@@ -5,12 +5,21 @@ import { useFormAndValidation } from "../../../hooks/useFormAndValidation";
 import { validateEmail, validateName } from "../../../utils/validators";
 
 function ProfileForm(props) {
-  const { values, handleChange } = useFormAndValidation();
+  const { values, handleChange, setValues } = useFormAndValidation();
   const currentUser = React.useContext(CurrentUserContext);
+
+  React.useEffect(() => {
+    setValues(currentUser);
+  }, [currentUser, setValues]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onUpdateProfile(values);
+  };
 
   return (
     <section className="profile-form">
-      <form className="profile-form__form" noValidate onSubmit={props.onSubmit}>
+      <form className="profile-form__form" noValidate onSubmit={handleSubmit}>
         <div className="profile-form__inputs-container">
           <fieldset className="profile-form__fieldset">
             <label className="profile-form__input-label" htmlFor="name">Имя</label>
