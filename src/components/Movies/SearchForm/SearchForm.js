@@ -32,10 +32,10 @@ function SearchForm({ onFilter, isChecked, checkboxChange, handleInputChange, in
         />
         <button className="search__form-submit-button" type="submit">
         </button>
-        <span className={"search__form-error search__form-error_active"}>
-          {inputError}
-        </span>
       </form>
+      <span className={"search__form-error search__form-error_active"}>
+        {inputError}
+      </span>
       <FilterCheckbox isChecked={isChecked} checkboxChange={checkboxChange} />
     </section>
   );
