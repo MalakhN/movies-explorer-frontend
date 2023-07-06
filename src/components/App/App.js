@@ -96,7 +96,7 @@ function App() {
     localStorage.removeItem("searchedMovies");
     localStorage.removeItem("inputVal");
     localStorage.removeItem("checkboxState");
-    localStorage.removeItem("searchedMoviesFavorite");
+    localStorage.removeItem("searchedMoviesSaved");
     localStorage.removeItem("inputValFavorite");
     localStorage.removeItem("checkboxStateFavorite");
     navigate("/", { replace: true });
@@ -143,14 +143,14 @@ function App() {
         console.error(`Ошибка: ${err}`);
       });
     const filteredSavedMovies = JSON.parse(
-      localStorage.getItem("searchedMoviesFavorite"),
+      localStorage.getItem("searchedMoviesSaved"),
     );
     if (filteredSavedMovies) {
       const newFilteredSavedMoviesArr = filteredSavedMovies.filter(
         (movie) => movie._id !== id,
       );
       localStorage.setItem(
-        "searchedMoviesFavorite",
+        "searchedMoviesSaved",
         JSON.stringify(newFilteredSavedMoviesArr),
       );
     }

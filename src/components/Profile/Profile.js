@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { useFormAndValidation } from '../../hooks/useFormAndValidation';
+import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 import "./Profile.css";
 import Header from "../Header/Header"
 import Navigation from "../Navigation/Navigation"

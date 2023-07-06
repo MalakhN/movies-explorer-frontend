@@ -9,7 +9,7 @@ function FilterCheckbox({ checkboxChange, isChecked }) {
           type="checkbox"
           id="switch"
           onChange={checkboxChange}
-          checked={isChecked || ''}
+          checked={isChecked || ""}
         />
         <label className="filter-checkbox__label" htmlFor="switch"></label>
       </div>

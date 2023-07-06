@@ -1,7 +1,6 @@
 import Form from "../../Form/Form";
 import Input from "../../Form/Input/Input";
-import { useFormAndValidation } from '../../../hooks/useFormAndValidation';
-import { validateEmail } from '../../../utils/validators';
+import { useFormAndValidation } from "../../../hooks/useFormAndValidation";
 
 function LoginForm(props) {
   const { values, handleChange, errors, isValid } = useFormAndValidation();
@@ -21,7 +20,7 @@ function LoginForm(props) {
       isValid={isValid}
     >
       <Input
-        value={values.email || ''}
+        value={values.email || ""}
         onChange={handleChange}
         id="email"
         type="email"
@@ -33,7 +32,7 @@ function LoginForm(props) {
         autoComplete="off"
       />
       <Input
-        value={values.password || ''}
+        value={values.password || ""}
         onChange={handleChange}
         id="password"
         type="password"

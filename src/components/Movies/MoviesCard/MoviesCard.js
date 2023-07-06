@@ -1,5 +1,5 @@
-import React from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import React from "react";
+import { useLocation, Link } from "react-router-dom";
 import "./MoviesCard.css";
 
 function MoviesCard({ movie, savedMovies, onToggleLike, onRemoveMovie }) {
@@ -7,14 +7,14 @@ function MoviesCard({ movie, savedMovies, onToggleLike, onRemoveMovie }) {
 
   const likedMovie = savedMovies
     ? savedMovies.find((item) => item.movieId === movie.id)
-    : '';
+    : "";
 
   const isLiked = savedMovies
     ? savedMovies.some((i) => i.movieId === movie.id)
     : false;
 
   const cardLikeButtonClassName = `movies-card__save-button ${
-    isLiked ? 'movies-card__save-button_active' : ''
+    isLiked ? "movies-card__save-button_active" : ""
   }`;
 
   const handleLikeClick = () => {
@@ -41,14 +41,14 @@ function MoviesCard({ movie, savedMovies, onToggleLike, onRemoveMovie }) {
           alt={movie.nameRU}
         />
       </Link>
-      {pathname === '/movies' && (
+      {pathname === "/movies" && (
           <button
             onClick={handleLikeClick}
             type="button"
             className={cardLikeButtonClassName}
           />
         )}
-        {pathname === '/saved-movies' && (
+        {pathname === "/saved-movies" && (
           <button
             onClick={handleDeleteClick}
             type="button"
