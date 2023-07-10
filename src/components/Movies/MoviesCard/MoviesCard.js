@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
+import { movieLengthConv } from "../../../utils/movieLengthConv";
 import "./MoviesCard.css";
 
 function MoviesCard({ movie, savedMovies, onToggleLike, onRemoveMovie }) {
@@ -29,7 +30,7 @@ function MoviesCard({ movie, savedMovies, onToggleLike, onRemoveMovie }) {
     <article className="movies-card">
       <div className="movies-card__title-container">
         <span className="movies-card__name">{movie.nameRU}</span>
-        <span className="movies-card__duration">{movie.duration} минут</span>
+        <span className="movies-card__duration">{movieLengthConv(movie.duration)}</span>
       </div>
       <Link
         className="movies-card__trailer-link"

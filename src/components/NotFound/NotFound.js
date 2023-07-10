@@ -1,11 +1,12 @@
+import React from "react";
 import "./NotFound.css";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function NotFound() {
+function NotFound({ loggedIn }) {
   const navigate = useNavigate();
 
   function handleBackButtonClick() {
-    navigate(-1);
+    loggedIn ? navigate(-2) : navigate('/');
   }
 
   return (
@@ -22,3 +23,6 @@ function NotFound() {
 }
 
 export default NotFound;
+
+
+
