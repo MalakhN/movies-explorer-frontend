@@ -30,6 +30,7 @@ function LoginForm(props) {
         minLength="2"
         maxLength="70"
         autoComplete="off"
+        errorText={validateEmail(values.email).error}
       />
       <Input
         value={values.password || ""}
@@ -42,6 +43,7 @@ function LoginForm(props) {
         minLength="2"
         maxLength="40"
         autoComplete="off"
+        errorText={errors.password}
       />
     </Form>
   )
