@@ -101,14 +101,14 @@ function Movies({ movies, moviesError, savedMovies, onToggleLike }) {
   }, []);
 
   const renderMovies = React.useMemo(() => {
-    const cardsCounter = screenWidth < 768 ? 5 : screenWidth < 1280 ? 8 : 12;
+    const cardsCounter = screenWidth < 808 ? 5 : screenWidth < 1195 ? 8 : 12;
     return filteredMovies.slice(0, cardsCounter + nextMovies);
   }, [nextMovies, screenWidth, filteredMovies]);
 
   const handleClickButtonMore = () => {
-    if (screenWidth < 1280) {
+    if (screenWidth < 1195) {
       setNextMovies((prev) => prev + 2);
-    } else if (screenWidth >= 1280) {
+    } else if (screenWidth >= 1195) {
       setNextMovies((prev) => prev + 3);
     }
   };
