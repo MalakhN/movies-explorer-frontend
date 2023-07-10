@@ -3,4 +3,4 @@
 * Frontend: https://movies-explorer.nomoredomains.rocks
 * Backend: https://api.movies-explorer.nomoredomains.rocks
 ***
-* Pull Request: https://github.com/MalakhN/movies-explorer-frontend/pull/60
+* Pull Request: https://github.com/MalakhN/movies-explorer-frontend/pull/63
