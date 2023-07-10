@@ -1,7 +1,7 @@
 import Form from "../../Form/Form";
 import Input from "../../Form/Input/Input";
 import { useFormAndValidation } from "../../../hooks/useFormAndValidation";
-import { validateEmail, validateName } from "../../../utils/validators";
+import { validateEmail } from "../../../utils/validators";
 
 function LoginForm(props) {
   const { values, handleChange, errors, isValid } = useFormAndValidation();

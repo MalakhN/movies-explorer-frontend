@@ -10,6 +10,9 @@ function RegisterForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!values.email || !values.password) {
+      return;
+    }
     props.onRegister(values);
   };
 
